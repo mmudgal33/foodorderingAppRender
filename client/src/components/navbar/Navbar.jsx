@@ -47,13 +47,13 @@ const Navbar = () => {
         <div className={classes.center}>
           <ul className={classes.list}>
             <li className={classes.listItem}>
-              <a href="/">Home</a>
+              <Link to="/">Home</Link>
             </li>
             {/* <li className={classes.listItem}>
               <a href="/contacts">Contacts</a>
             </li> */}
             <li className={classes.listItem}>
-              <a href="/foods">Foods</a>
+              <Link to="/foods">Foods</Link>
             </li>
             {/* <li className={classes.listItem}>
               <a href="/faq">FAQ</a>
