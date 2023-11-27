@@ -41,7 +41,7 @@ const FoodCatalog = () => {
         {filteredFoods?.length !== 0 && <h2 className={classes.title}>The best {foodEndpoint} in the region</h2>}
         <div className={classes.foods}>
           {filteredFoods.length !== 0 ? filteredFoods.map((f) => (
-            <Link to={`/food/${f._id}`} key={f._id} className={classes.food}>
+            <Link to={`${CLI}/food/${f._id}`} key={f._id} className={classes.food}>
               <div className={classes.imgContainer}>
                 {/* <img src={`http://localhost:5000/images/${f?.img}`} alt="" className={classes.foodImg} /> */}
                 {/* <img src={`/images/${f?.img}`} alt="" className={classes.foodImg} /> */}

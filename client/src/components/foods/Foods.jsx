@@ -33,7 +33,7 @@ const Foods = () => {
             ))} */}
 
             {token !== null ? foodTypes.map((foodType) => (
-              <Link to={`/foods/${foodType.name}`} key={foodType.id} className={classes.food}>
+              <Link to={`${CLI}/foods/${foodType.name}`} key={foodType.id} className={classes.food}>
                 <h4>{foodType.name}</h4>
                 <div className={classes.imgContainer}>
                   <img src={foodType.img} alt="" />
