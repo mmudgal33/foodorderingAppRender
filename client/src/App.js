@@ -2,7 +2,8 @@
 //import './App.css';
 import './App.css';
 import {Routes, Route} from 'react-router-dom'
-import Navbar from './components/navbar/Navbar';
+// import Navbar from './components/navbar/Navbar';
+import NavBar from './components/navbar/NavBar';
 
 import Home from './components/home/Home';
 import Login from './components/login/Login';
@@ -30,7 +31,8 @@ function App() {
 
   return (
     <div>
-       <Navbar />
+       {/* <Navbar /> */}
+       <NavBar />
        <Routes>
          <Route path='/' element={<Home />} />
          <Route path='/foods' element={<Foods />} />
