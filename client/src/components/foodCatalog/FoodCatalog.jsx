@@ -34,6 +34,9 @@ const FoodCatalog = () => {
 
 
   
+ // on clicking food type, this component called with that food type
+ // check whether that food type available or not
+ // it shows description of that food type. images, title, description, price.
 
   return (
     <div className={classes.container}>
@@ -63,7 +66,7 @@ export default FoodCatalog
 
 
 
-// http://localhost:3000/food/65579b7124d03a1f2a827437
+
 
 
 

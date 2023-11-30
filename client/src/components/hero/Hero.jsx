@@ -4,6 +4,7 @@ import { AiOutlineArrowDown } from 'react-icons/ai'
 
 import womanEating from '../../assets/womaneating3.jpg'
 
+// component for home page
 const Hero = () => {
   return (
     // <section style={{height: '200vh'}} id="home" className={classes.container}>
@@ -27,7 +28,7 @@ const Hero = () => {
             We treat our orders as chance to win hearts
           </p>
           <div className={classes.buttons}>
-            {/* <button className={classes.buttonOrder}>Order now!</button> */}
+            
             <button className={classes.buttonSee}><a href="/foods">See what's available <AiOutlineArrowDown /> </a></button>
           </div>
         </div>

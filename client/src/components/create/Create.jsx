@@ -8,7 +8,10 @@ import { config } from '../../Constants';
 const URL = config.api;
 
 
-
+// only those register who admin can add products here
+// title, description, category, price, rating taken
+// authorisatin check whether that data taken by backend.
+// it navigates to food category page 
 const Create = () => {
   const [title, setTitle] = useState("")
   const [desc, setDesc] = useState("")
@@ -17,21 +20,23 @@ const Create = () => {
   const [price, setPrice] = useState("")
   const [review, setReview] = useState("")
   const navigate = useNavigate()
+  
   // we get the auth slice from the entire state, which(auth slice) 
   // is the userInfo and the token
   const { token } = useSelector((state) => state.auth)
 
 
-  // type="file", e.target.files[0]
+  // handle change image of food
   const onChangeFile = (e) => {
     setImage(e.target.files[0])
   }
 
+  // handle change image 
   const handleCloseImg = () => {
     setImage('')
   }
 
-
+  // react dropdown for category types
   const options = [
     "burger",
     "tikichat",
@@ -44,6 +49,7 @@ const Create = () => {
     "petis",
   ];
 
+  // react dropdown for category types
   const onOptionChangeHandler = (event) => {
     setCategory(event.target.value);
     console.log(
@@ -53,7 +59,8 @@ const Create = () => {
   };
 
 
-
+  // handle submit create food product
+  // api for checking authority and food type
   const handleCreateProduct = async (e) => {
     e.preventDefault()
 
@@ -112,7 +119,7 @@ const Create = () => {
   
 
 
-
+ // create form component
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
@@ -137,12 +144,6 @@ const Create = () => {
             />
           </div>
           <div className={classes.inputWrapper}>
-            {/* <label>Category: </label>
-            <input type="text"
-              placeholder='Category...'
-              className={classes.input}
-              onChange={(e) => setCategory(e.target.value)}
-            /> */}
 
             <label for="Category">Category:</label>
             <select name="Category" className={classes.input} onChange={onOptionChangeHandler}>

@@ -4,7 +4,8 @@ import classes from './checkout.module.css'
 
 import {  emptyCart } from '../../redux/cartSlice'
 
-
+// checkout component to give message order is taken.
+// cart can be empty here using empty cart button
 const Checkout = () => {
   const {products} = useSelector((state) => state.cart)
   const dispatch = useDispatch()
@@ -13,6 +14,7 @@ const Checkout = () => {
     dispatch(emptyCart())
   }
 
+  // total order price calculation
   let totalPrice = 0
   products.map((product) => totalPrice += (product.quantity * product.price))
   return (

@@ -20,8 +20,8 @@ const Login = () => {
       e.preventDefault()
 
       try {
-        // const res = await fetch(`http://localhost:5000/auth/login`, {
-        // const res = await fetch(`https://mern-task-app-foodorderingfrontend-api.onrender.com/auth/login`, {
+        
+        // call api for login
         const res = await fetch(`${URL}/auth/login`, {
           headers: {
             'Content-Type': 'application/json'
@@ -30,11 +30,13 @@ const Login = () => {
           body: JSON.stringify({email, password})
         })
 
+        // login data sent to redux
         const data = await res.json()
         console.log(data)
         dispatch(login(data)) // {userInfo, token}
         navigate("/")
         
+        // error handling if error comes
       } catch (error) {
         setError(true)
         setTimeout(() => {
@@ -43,6 +45,7 @@ const Login = () => {
       }
   }
 
+  // login form component
   return (
     <div className={classes.loginContainer}>
       <div className={classes.loginWrapper}>

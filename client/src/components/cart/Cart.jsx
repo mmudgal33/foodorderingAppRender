@@ -8,14 +8,14 @@ import { config } from '../../Constants';
 const URL = config.api;
 
 
-
+// cart showing order product, quantity, increase decrease quantity, place final order here
 const Cart = () => {
   const { products } = useSelector((state) => state.cart)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
 
-
+ // change quantity of product
   const increaseProduct = (id) => {
     console.log(id)
     dispatch(incProduct({ _id: id }))
@@ -27,23 +27,25 @@ const Cart = () => {
   }
 
 
-
+  // show order totat price
   let totalPrice = 0
   products.map((product) => totalPrice += (product.quantity * product.price))
 
+  // handle remove product
   const handleRemoveProduct = (id) => {
     console.log(id)
     dispatch(removeProduct({ _id: id }))
   }
 
+  // handle to order cart products, it navigates to checkout
   const handleOrder = () => {
     if (products.length > 0) {
       navigate('/checkout')
-      // dispatch(emptyCart())
     }
     
   }
 
+  // cart component code
   return (
     
     <div className={classes.container}>

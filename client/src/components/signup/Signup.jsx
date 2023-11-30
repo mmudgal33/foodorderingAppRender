@@ -11,7 +11,7 @@ const URL = config.api;
 
 
 
-
+// sign up component creation
 const Signup = () => {
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
@@ -20,17 +20,15 @@ const Signup = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
+
+  // submit button handle. calling api for register
   const handleSignup = async (e) => {
     e.preventDefault()
     
     try {
-      // const values = JSON.stringify({ username, email, password })
-      // console.log(values)
-      // axios.post('http://localhost:5000/auth/register', values)
-
-      // const res = await fetch(`http://localhost:5000/auth/register`, {
+     
         const res = await fetch(`${URL}/auth/register`, {
-      // const res = await fetch(`/auth/register`, {
+      
         headers: {
           "Content-Type": 'application/json'
         },
@@ -38,13 +36,14 @@ const Signup = () => {
         body: JSON.stringify({ username, email, password })
       })
 
+      // send register data to redux
       const data = await res.json()
       console.log(data)
       dispatch(register(data))
       navigate('/')
       // console.log(data)
-      
 
+      // if error comes, show error message
     } catch (error) {
       setError(true)
       setTimeout(() => {
@@ -54,12 +53,7 @@ const Signup = () => {
   }
 
 
-  
-
-
-  
-
-
+  // form for signup
   return (
     
     <div className={classes.signUpContainer}>
@@ -76,8 +70,7 @@ const Signup = () => {
             <button className={classes.submitBtn}>Sign Up</button>
             
             <p>Already have an account? <Link to='/login'>Login</Link></p>
-            {/* <p>Already have an account? <a href="/login">Login</a></p> */}
-            {/* <button onclick="window.location.href = '/login';">Login</button> */}
+            
 
           </form>
           

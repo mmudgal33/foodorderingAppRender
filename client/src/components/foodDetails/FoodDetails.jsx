@@ -11,7 +11,10 @@ import { config } from '../../Constants';
 const URL = config.api;
 
 
-
+// after clicking available food, here we take quantity of order.
+// category, quantity, price, image shown here
+// it navigates to foods page, for more order
+// click cart for final edit and order 
 const FoodDetails = () => {
   const [foodDetails, setFoodsDetails] = useState('')
   const [quantity, setQuantity] = useState(1)
@@ -22,6 +25,7 @@ const FoodDetails = () => {
   const navigate = useNavigate()
   console.log(products)
 
+  // category, quantity, price, image shown here after calling api
   useEffect(() => {
      const fetchFoodDetails = async() => {
       // const res = await fetch(`http://localhost:5000/product/find/${id}`, {
@@ -38,6 +42,7 @@ const FoodDetails = () => {
      
   }, [id, token])
 
+  // after clicking available food, here we take quantity of order.
   const changeQuantity = (command) => {
     if(command === 'dec'){
        if(quantity === 1) return
@@ -47,6 +52,7 @@ const FoodDetails = () => {
     }
   }
 
+  // handle add to cart 
   const addToCart = () => {
     dispatch(addProduct({...foodDetails, quantity}))
     navigate(`/foods`)

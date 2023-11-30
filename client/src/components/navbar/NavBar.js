@@ -6,39 +6,33 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../../redux/authSlice'
 
-// AiOutlineUser,
 
 
-
+// navbar for moving between home, foods, create, cart
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
     const { products } = useSelector((state) => state.cart)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    // const { username } = useSelector((state) => state.user)
-    // const {user} = useSelector((state) => state.auth)
-    //{user ==null ? `IN` : `OUT`}
+    
 
-
-
-    // window.onscroll = () => {
-    //   setIsScrolled(window.pageYOffset === 0 ? false : true)
-    //   return () => (window.onscroll = null)
-    // }
 
     window.onscroll = () => {
         setIsScrolled(window.scrollY === 0 ? false : true)
         return () => (window.onscroll = null)
     }
 
+    // handle logout
     const handleLogout = () => {
         dispatch(logout())
         navigate('/login')
     }
 
+
+    // links for nanigation
     return (
         <nav class="navbar navbar-inverse">
-            {/* <div class="container-fluid"> */}
+            
             <div className={`${classes.container} ${isScrolled && classes.scrolled}`}>
                 <div className={classes.wrapper}>
                     <div class="navbar-header">
@@ -72,7 +66,7 @@ const Navbar = () => {
                                 <AiOutlineShoppingCart className={classes.cartIcon} />
                                 <div className={classes.cartQuantity}>{products.length}</div>
                             </Link>
-                            <button onClick={handleLogout} className={classes.logout}>LOGOUT</button>
+                            <button onClick={handleLogout} className={classes.logout}>LOG-IN-OUT</button>
                         </div>
                     </ul>
                 </div>
