@@ -12,11 +12,6 @@ app.use(bodyParser.json());
 
 
 // connect our db
-
-// postman workspace collections(rename it right click) (click three dots for new request)
-// cluster0-project foodOrderingApp-database foodOrderingApp-collections foodOrderingApp-overview-connect-drivers-copy link
-
-
 mongoose.set('strictQuery', false)
 // mongo_url="mongodb://127.0.0.1:27017/foodOrderingApp";
 mongoose.connect(process.env.MONGO_URL, () => console.log('DB is successfully connected'))
@@ -75,3 +70,8 @@ app.listen(PORT, () => console.log('Server has been started successfully'))
 // https://soufiane-oucherrou.medium.com/user-registration-with-mongoose-models-81f80d9933b0
 // https://subscription.packtpub.com/book/data/9781839210648/1/ch01lvl1sec09/mongodb-atlas-organizations-projects-users-and-clusters
 // https://blog.devgenius.io/how-to-create-a-navbar-using-react-router-51b78bc6ce51
+
+
+
+// postman workspace collections(rename it right click) (click three dots for new request)
+// cluster0-project foodOrderingApp-database foodOrderingApp-collections foodOrderingApp-overview-connect-drivers-copy link

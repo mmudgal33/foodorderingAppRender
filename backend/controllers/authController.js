@@ -1,3 +1,7 @@
+// middleware for register, check email availablity, then save email, hashed password, whether admin. 
+// middleware for login with previous register email and password
+
+
 const authController = require('express').Router()
 const User = require('../models/User')
 const bcrypt = require("bcrypt")

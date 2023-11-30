@@ -5,6 +5,7 @@ const initialState = {
    token: null,
 }
 
+// actions related to login, authorisation checked here, it's related to redux
 export const authSlice = createSlice({
     name: 'auth',
     initialState,

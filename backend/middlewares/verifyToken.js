@@ -1,3 +1,5 @@
+// varify token for login
+
 const jwt = require('jsonwebtoken')
 
 // verifyToken

@@ -1,3 +1,6 @@
+// middleware for product, it checks for admin, food category ,verify token
+// middleware for finding available food category, which were created through create form
+
 const productController = require("express").Router()
 const Product = require("../models/Product")
 const {verifyToken, verifyTokenAdmin} = require('../middlewares/verifyToken')

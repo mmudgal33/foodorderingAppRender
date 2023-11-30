@@ -28,7 +28,7 @@ function App() {
    window.scrollTo(0, 0)
  }, [location.pathname])
 
-
+ // navigation and routes for navigation
   return (
     <div>
        {/* <Navbar /> */}

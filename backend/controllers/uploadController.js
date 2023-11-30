@@ -1,3 +1,5 @@
+// middleware for product authority check, admin check
+
 const uploadController = require('express').Router()
 
 const multer = require('multer')

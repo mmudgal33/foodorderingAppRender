@@ -9,6 +9,8 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
 import { Provider } from 'react-redux';
 
+
+// router and redux initialisation in index.js of react app
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>

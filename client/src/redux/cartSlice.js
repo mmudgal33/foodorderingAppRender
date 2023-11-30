@@ -4,6 +4,7 @@ const initialState = {
     products: []
 }
 
+// actions related to cart added here, it's related to redux
 export const cartSlice = createSlice({
     name: 'cart',
     initialState,
